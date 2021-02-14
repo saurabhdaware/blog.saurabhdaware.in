@@ -31,7 +31,7 @@
   body .dark-mode-toggle .moon {display: none}
   body .dark-mode-toggle .sun {display: inline-block}
 </style>
-<script inlined>
+<script>
   function toggleTheme(toggleButton) {
     if (document.body.classList.contains('dark')) {
       document.body.classList.remove('dark');
@@ -49,7 +49,8 @@
       }
     }
   }
-
+</script>
+<script inlined>
   const localPreference = window.localStorage.getItem('prefers-theme');
 
   if (localPreference) {

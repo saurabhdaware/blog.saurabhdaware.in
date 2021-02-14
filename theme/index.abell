@@ -29,7 +29,8 @@
     <h1>{{ globalMeta.siteName }}</h1>
     <div class="header-bio">
       Hi, I am {{ globalMeta.name }}</b> you can follow me on <a href="https://twitter.com/{{ globalMeta.twitter }}">Twitter @{{ globalMeta.twitter }}</a>. 
-      <br/>I write articles about Developer Experience, Performance, and the tools that I build.
+      <!-- <br/>I write articles about Developer Experience, Performance, and the tools that I build. -->
+      <br /> [WIP] This blog isn't ready yet.
     </div>
   </header>
   <main>

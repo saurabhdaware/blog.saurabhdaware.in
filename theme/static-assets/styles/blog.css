@@ -30,7 +30,17 @@ div.blog-container a:hover {
   transition: border-bottom .2s ease;
 }
 
+div.blog-container img {
+  max-width: 600px;
+}
+
 ul {
+  margin: 0px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+ul ul {
   padding-left: 20px;
 }
 ul li {
@@ -84,5 +94,9 @@ hr {
 @media (max-width: 768px) {
   main {
     padding: 40px 20px;
+  }
+
+  div.blog-container img {
+    max-width: 100%;
   }
 }
