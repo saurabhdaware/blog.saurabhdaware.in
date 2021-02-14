@@ -58,7 +58,7 @@ Inlining styles is a whole different task with bundlers, here's talk by [Surma](
 And thus we eventually hit a condition where we only have one option, either add that extra bit of performance or have a better structured code and ignore the performance improvements.
 
 <br/>
-<img width="300" src="assets/button-meme.jpg" />
+<img alt="Stressful button click meme with Scalable website and Performant website as option" width="300" src="assets/button-meme.jpg" />
 
 
 ## Solution to this?
