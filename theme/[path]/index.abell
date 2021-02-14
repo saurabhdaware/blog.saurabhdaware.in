@@ -1,0 +1,64 @@
+{{
+  const { globalMeta, meta, importContent, $root } = Abell;
+
+  const DarkModeToggle = require('../components/DarkModeToggle.abell');
+  const TwitterShareButton = require('../components/TwitterShareButton.abell');
+  const Footer = require('../components/Footer.abell');
+  const InlinedCSS = require('../static-assets/styles/inlined.css.abell');
+}}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{ 
+    const ogImageOptions = `g_center,w_1100,c_fit,co_rgb:222222,l_text:Work Sans_80_600:${ meta.title }`;
+  }}
+
+  <meta charset="UTF-8"/>
+  
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:creator" content="@{{ globalMeta.twitter }}" />
+  <meta property="og:title" content="{{ meta.title }}" />
+  <meta property="og:description" content="{{ meta.description }}" />
+  <meta property="og:image" content="https://res.cloudinary.com/saurabhdaware/image/upload/{{ ogImageOptions }}/v1604047618/saurabh2021/cover.png" />
+  <meta property="og:image:width" content="1280" />
+  <meta property="og:image:height" content="640" />
+  <meta property="og:image:alt" content="Cover Image of blog with title written in it" />
+
+  <meta name="description" content="{{ meta.description }}"/>
+  <link rel="shortcut icon" href="{{ $root }}/favicon.ico" type="image/x-icon" />
+  <meta name="og:title" content="{{ meta.title }}"/>
+  <meta name="og:description" content="{{ meta.description }}"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="{{ $root }}/static-assets/styles/blog.css"/>
+
+  <title>{{ meta.title }} - {{ globalMeta.siteName }}</title>
+  
+  <InlinedCSS/>
+</head>
+<body>
+  <main>
+    <DarkModeToggle props={$root}/>
+    <div class="blog-container">
+      <div class="content">
+        <h1>{{ meta.title }}</h1>
+        <div class="blog-date">
+          Published on {{ meta.$createdAt.toDateString() }}
+        </div>
+
+        {{ importContent(`${meta.$path}/index.md`) }}
+      </div>
+    </div>
+    <hr/><br/><br/>
+    <TwitterShareButton 
+      props={link: `${globalMeta.domain}/${meta.$path}/`, $root}
+    />
+  </main>
+  <Footer/>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css" />
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+  <script defer src="{{ $root }}/static-assets/js/static-main.js"></script>
+</body>
+</html>
