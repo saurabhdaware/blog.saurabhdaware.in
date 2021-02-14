@@ -6,7 +6,7 @@ header {
 }
 header > h1 {
   margin: 10px 0px;
-  font-size: 4.2rem;
+  font-size: 4.7rem;
 }
 
 .header-bio {
@@ -16,7 +16,7 @@ header > h1 {
 }
 
 .article-date {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--font-color-primary);
   padding: 0px 3px 2px 1px;
 }
@@ -33,10 +33,12 @@ header > h1 {
   display: block;
 }
 .article-container > article h2 {
-  margin: 9px 0px 0px 0px;
+  font-size: 1.8rem;
+  margin: 9px 0px 2px 0px;
 }
 .article-container .article-description {
   margin: 3px 0px;
+  font-size: 1.03rem;
   color: var(--font-color-primary);
 }
 

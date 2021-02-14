@@ -3,9 +3,9 @@ module.exports = {
   destinationPath: 'dist',
   contentPath: 'content',
   globalMeta: {
-    siteName: 'Abell Minima',
-    name: 'Abell Team',
-    twitter: 'AbellLand',
-    domain: 'https://abell-starter-minima.netlify.app'
+    siteName: "Saurabh's Blog",
+    name: 'Saurabh Daware',
+    twitter: 'saurabhcodes',
+    domain: 'https://blog.saurabhdaware.in'
   }
 }

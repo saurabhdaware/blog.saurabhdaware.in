@@ -11,7 +11,7 @@
 <html lang="en">
 <head>
   {{ 
-    const ogImageOptions = `g_center,w_1100,c_fit,co_rgb:222222,l_text:Work Sans_80_600:${ meta.title }`;
+    const ogImageOptions = `g_center,w_1100,c_fit,co_rgb:222222,l_text:Work Sans_80_700:${ meta.title }`;
   }}
 
   <meta charset="UTF-8"/>
@@ -31,7 +31,7 @@
   <meta name="og:description" content="{{ meta.description }}"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="{{ $root }}/static-assets/styles/blog.css"/>
-
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&amp;display=swap" rel="stylesheet">  
   <title>{{ meta.title }} - {{ globalMeta.siteName }}</title>
   
   <InlinedCSS/>

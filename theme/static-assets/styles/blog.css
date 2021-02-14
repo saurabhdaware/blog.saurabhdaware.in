@@ -1,5 +1,5 @@
 main {
-  padding: 100px 200px;
+  padding: 100px 240px;
 }
 
 p {
@@ -11,6 +11,23 @@ div.blog-container h1 {
   font-size: 3.3rem;
   font-weight: bold;
   margin-bottom: 10px;
+}
+
+div.blog-container p {
+  font-size: 1.05rem;
+  padding: 8px 20px;
+  line-height: 1.6rem;
+  word-spacing: 0.06rem;
+}
+
+div.blog-container a {
+  border-bottom: 2px solid transparent;
+  transition: border-bottom .1s ease;
+}
+
+div.blog-container a:hover {
+  border-bottom: 2px solid var(--link-color);
+  transition: border-bottom .2s ease;
 }
 
 div.blog-container h2 {
@@ -26,8 +43,8 @@ div.blog-container h3 {
 }
 
 div.blog-container .blog-date {
-  padding: 0px 5px 30px 5px;
-  margin-bottom: 30px;
+  padding: 6px 5px 10px 5px;
+  margin-bottom: 18px;
 }
 
 code {
