@@ -30,6 +30,15 @@ div.blog-container a:hover {
   transition: border-bottom .2s ease;
 }
 
+ul {
+  padding-left: 20px;
+}
+ul li {
+  font-size: 1.1rem;
+  line-height: 1.8rem;
+
+}
+
 div.blog-container h2 {
   font-size: 1.91rem;
   font-weight: bold;
