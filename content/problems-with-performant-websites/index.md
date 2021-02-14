@@ -1,5 +1,3 @@
-*Note: [WIP] This site is Work In Progress.*
-
 There are lots of articles on the internet mentioning that we lose `x` amount of users when the website is slower than `y` seconds. Then why not we all just start making fast websites? well... its hard. 
 
 After some optimizations like sizing images correctly, minifying the code, we hit a point where the way websites load and parsed become a limitation to further improvements.
