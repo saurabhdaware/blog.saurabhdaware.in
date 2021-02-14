@@ -1,6 +1,6 @@
 {
   "title": "Problems with Performant Websites",
-  "ogImage": "assets/og.png",
+  "ogImage": "https://blog.saurabhdaware.in/problems-with-performant-websites/assets/og.png",
   "description": "This blog covers the limitations to performant websites and talks about how we can use Abell to make sure we don't compromise on scalability while improving performance.",
   "$createdAt": "19 June 2020"
 }
