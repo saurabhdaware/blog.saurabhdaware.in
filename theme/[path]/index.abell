@@ -14,6 +14,17 @@
     const ogImageOptions = `g_center,w_1100,c_fit,co_rgb:222222,l_text:Work Sans_80_700:${ meta.title }`;
   }}
 
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125454191-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-125454191-1');
+  </script>
+
+
   <meta charset="UTF-8"/>
   
   <meta name="twitter:card" content="summary_large_image" />
