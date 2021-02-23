@@ -1,25 +1,23 @@
 I wish if I could write down step 1, step 2, step 3 to get your first job. Unfortunately things aren't that certain and a lot of factors play role. So rather than making this article "Do this to get your first job" It's more of a "I did this. Maybe try and see if it works for you?" 
 
----
-## Table of Content
+**TLDR;**
 
-- [Getting the Interview]()
-  - [Tech Journey So Far]()
-  - [Failing Lots of Interviews]()
-  - [Kind People to the Rescue!!]()
-- [Interview Experience]()
-  - [Round 1]()
-  - [Round 2]()
----
+<img alt="Jerry from Rick and Morty saying I kept crawling and it kept working" src="assets/tldrmeme.png" width="300" />
 
 
-## Getting the Interview
+## Getting The Interview
 
-### Tech Journey So Far
+- Building Projects
+- Sharing Projects
+- Randomly sharing the resume
+- Kamlesh's DM
 
-**Year 2016-**
+## Interview Experience
 
-I started my Bachelor's. I wasn't sure if I really want to choose coding as a career. All I knew was I like computers and if I do this I can make games (17 year-old me was freaking out over the idea of making my own GTA San Andreas).
+- Initial call with the HR
+- Round 1: **Conversation** || Internet messing things up, Conversation about Abell and older projects (with Nick)
+- Round 2: **Coding** || Writing Abell, React JS question
+- Round 3: **Fundamentals** || JS Fundamentals, Authentication, Security, Working of Login.
+- Round 4: **Discussion with Director** || Again discussing projects. 
 
-
-Not related to tech but do watch ["Is Success Luck or Hard Work?" by Veritasium on YouTube](https://youtu.be/3LopI4YeC4I).
+https://razorpay.com/jobs-frontend/
