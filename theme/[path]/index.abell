@@ -50,7 +50,12 @@
 </head>
 <body>
   <main>
-    <DarkModeToggle props={$root}/>
+    <DarkModeToggle 
+      props={
+        $root,
+        class: 'blog-dark-mode'
+      }
+    />
     <div class="blog-container">
       <div class="content">
         <h1>{{ meta.title }}</h1>
