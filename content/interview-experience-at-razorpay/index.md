@@ -68,6 +68,27 @@ And in next few days, I get a call from the HR 🎉
 
 ## Interview Experience
 
+First, there was a call with the HR where we discussed about what I do and my expected day of joining and talked a bit about my projects, past experience, and open-source. I asked few questions around the interview process. 
+
+Soon after the call, I got an email with a schedule to first 2 rounds of the interview.
+
+Round 1 was called "Tech Deep Dive", As soon as I joined the meeting, my internet said "bye ✌🏼". I got extremely nervous and thought I messed up already but the interviewer was extremely patient and suggested to do the round over a phone call instead of Google Meet. So we had a conversation over a phone call. We discussed about my projects. I was surprised to see how much the interviewer had studied my projects. The questions were more of a 'how I implemented a particular thing in my xyz project'. I felt extremely comfortable during this round as it was more of a discussion and less of Q and A. The interviewer was an amazing listener and listened to all my answers carefully. 
+
+Round 2 was The Coding Round, Again we had a little bit of conversation about my projects for few minutes and then we pair programmed on CodeSandbox to play around few things in React. Brushing up my React and JS fundamentals helped during this round. The interviewer was extremely friendly and made me feel comfortable. I even forgot a syntax of something basic in-between and interviewer did realize this without me mentioning. The interviewer also didn't know that syntax so they google searched the syntax for me, and helped me get unstuck on that part. This round too went well and I loved the discussion we had during this round.
+
+Round 3 was a round called "Core JavaScript/Web Fundamentals". Again we had a bit of conversation about my projects and eventually moved to talking about Web and JavaScript in general. This too was more of a discussion and less of a Q and A. We discussed about Frontend Security, and talked about few of the decisions in my projects, and dived deep inside the implementation of few things in my projects. All the questions were related to the job and they were expected questions and nothing came as a surprise.
+
+Round 4 was a conversation with the director. Apart from talking about projects, we discussed things about how I keep myself updated with the new tech, what I like to work on, etc.
+
+Throughout the process, one constant thing that I can't miss mentioning is how friendly the interviewers were. They made me feel comfortable and listened to my answers. Every question they asked was a very valid question and was related to the job. No question came as a surprise and I felt like I was always prepared for this interview. 
+
+You can learn more about what we do and the interview process at [Razorpay's Frontend Jobs Page](https://razorpay.com/jobs-frontend/)
+
+----
+
+## Rough Temp
+
+
 - Initial call with the HR
 - Round 1: **Conversation** || Internet messing things up, Conversation about Abell and older projects (with Nick)
 - Round 2: **Coding** || Writing Abell, React JS question
