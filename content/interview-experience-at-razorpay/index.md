@@ -41,8 +41,6 @@ Here's a picture from my first repository-
 
 This introduction is very accurate representation of 18-year-old Saurabh.
 
-P.S. Unpopular opinion but now I hate the terms MEAN and MERN.
-
 ### Late 2018 - Early 2019, Building Projects
 
 I was building a lot of useless things but they taught me a lot about web and JavaScript in general. Building a boring game (never even released it) helped me learn JavaScript the most. I was very popular on GitHub during this time (no lol). Had 8 stars on all my projects combined and no one really used my projects. Just some of my college friends and my mom.
@@ -98,7 +96,4 @@ You can learn more about what we do and the interview process at [Razorpay's Fro
 
 So what helped me? 1. People!!, 2. Building and Sharing Projects, 3. Being engaged with the tech community through talks/articles/projects, 4. Luck
 
-Ok let me mention this before we end- This is a very short article so I only highlighted the goods. I really don't want to overwhelm anyone. There have been lots of bads in-between from failing a bunch of interviews, being scared of applying for jobs out of fear of ending up at a wrong place, not getting any response from lots of companies, and covid surprise. Maybe I'll write another detailed article on my journey some day which talks about these things as well.
-
-
-https://razorpay.com/jobs-frontend/
+Ok let me mention this before we end- This is a very short article so I only highlighted the goods. I really don't want to overwhelm anyone. There have been lots of bads in-between from failing a bunch of interviews, being scared of applying for jobs out of fear of ending up at a wrong place, not getting any response from lots of companies, and covid surprise. Unfortunately it's not always sunflowers and rainbows.
