@@ -64,7 +64,7 @@ One year of using Twitter and I had met some absolutely amazing people. On a ran
 
 ![Kamlesh: Yo! interested to work with Razorpay? Saurabh: Hi, oh yes I would love to! I am looking for a position that starts round January](assets/kamleshdm.png)
 
-And in next few days, I get a call from the HR 🎉
+And in next few days, I got a call from the HR 🎉
 
 ## Interview Experience
 
