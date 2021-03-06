@@ -1,5 +1,5 @@
 {{
-  const { globalMeta, meta, importContent, $root } = Abell;
+  const { globalMeta, meta, importContent, $root, contentArray } = Abell;
 
   const DarkModeToggle = require('../components/DarkModeToggle.abell');
   const TwitterShareButton = require('../components/TwitterShareButton.abell');
@@ -66,10 +66,35 @@
         {{ importContent(`${meta.$path}/index.md`) }}
       </div>
     </div>
-    <hr/><br/><br/>
+    <br/><br/>
     <TwitterShareButton 
       props={link: `${globalMeta.domain}/${meta.$path}/`, $root}
     />
+    <br/><br/><br/><hr/><br/>
+    <script
+      src="https://utteranc.es/client.js"
+      repo="saurabhdaware/blog.saurabhdaware.in"
+      issue-term="url"
+      label="comments"
+      theme="github-light"
+      crossorigin="anonymous"
+      async>
+    </script>
+
+    <!-- <div class="more-to-read">
+    <h2>More Articles</h2>
+      {{
+        contentArray
+          .filter(contentMeta => contentMeta.published !== false && contentMeta.$path !== meta.$path)
+          .slice(0, 3)
+          .map(contentMeta => /* html */ `
+            <div>
+              <a href="${contentMeta.$root}/${contentMeta.$path}"><h3>${contentMeta.title}</h3></a>
+              <p>${contentMeta.description}</p>
+            </div>
+          `)
+      }}
+    </div> -->
   </main>
   <Footer/>
 

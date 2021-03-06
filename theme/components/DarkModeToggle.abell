@@ -59,6 +59,9 @@
         toggleButton.setAttribute('aria-label', 'Activate Light Mode');
       }
     }
+
+    const themeChangeEvent = new Event('theme-change');
+    window.dispatchEvent(themeChangeEvent);
   }
 </script>
 <script inlined>

@@ -14,3 +14,23 @@ try {
     throw err;
   }
 }
+
+function setCommentsTheme(themeName) {
+  const message = {
+    type: 'set-theme',
+    theme: themeName === 'dark' ? 'github-dark' : 'github-light'
+  };
+  const utterances = document.querySelector('iframe.utterances-frame').contentWindow; // try event.source instead
+  utterances.postMessage(message, 'https://utteranc.es');
+}
+
+window.addEventListener('message', () => 
+  setCommentsTheme(document.body.classList.contains('dark') ? 'dark' : 'light')
+);
+
+window.addEventListener('theme-change', () => {
+  console.log('theme change!!');
+  console.log(document.body.classList.contains('dark'));
+
+  setCommentsTheme(document.body.classList.contains('dark') ? 'dark' : 'light')
+})

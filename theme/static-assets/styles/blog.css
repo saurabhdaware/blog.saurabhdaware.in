@@ -14,9 +14,9 @@ div.blog-container h1 {
 }
 
 div.blog-container p {
-  font-size: 1.05rem;
-  padding: 8px 20px;
-  line-height: 1.6rem;
+  font-size: 1.25rem;
+  padding: 12px 0px;
+  line-height: 2rem;
   word-spacing: 0.06rem;
 }
 
@@ -43,21 +43,22 @@ ul {
 ul ul {
   padding-left: 20px;
 }
+
 ul li {
-  font-size: 1.1rem;
-  line-height: 1.8rem;
+  font-size: 1.2rem;
+  line-height: 2rem;
 
 }
 
 div.blog-container h2 {
-  font-size: 1.91rem;
+  font-size: 2rem;
   font-weight: bold;
   margin-bottom: 14px;
 }
 
 div.blog-container h3 {
-  font-size: 1.3rem;
-  font-weight: bold;
+  font-size: 1.5rem;
+  font-weight: 700;
   margin-bottom: 14px;
 }
 
@@ -106,6 +107,8 @@ hr {
 
   div.blog-container p {
     padding: 8px 8px;
+    font-size: 1rem;
+    line-height: 1.7rem;
   }
 
   div.blog-container iframe {

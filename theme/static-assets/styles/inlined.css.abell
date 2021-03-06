@@ -10,7 +10,7 @@
   }
 
   body.dark {
-    --background-primary: #121212;
+    --background-primary: #151515;
     --font-color-primary: #ccc; 
     --elevation-background: #1D1D1D;
     --code-background: #222;
