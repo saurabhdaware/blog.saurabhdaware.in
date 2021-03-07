@@ -1,14 +1,18 @@
 {{
   const { globalMeta, contentArray, $root } = Abell;
   
-  const DarkModeToggle = require('./components/DarkModeToggle.abell');
-  const InlinedCSS = require('./static-assets/styles/inlined.css.abell');
+  const CommonAssets = require('./components/CommonAssets.abell');
+  const Header = require('./components/Header.abell');
+  const Hero = require('./components/Hero.abell');
+  const ArticlesPreview = require('./components/ArticlesPreview.abell');
   const Footer = require('./components/Footer.abell');
 }}
+<CommonAssets />
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
+   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125454191-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -31,38 +35,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Welcome to the {{ globalMeta.siteName }}, A blog by {{ globalMeta.name }}" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&amp;display=swap" rel="stylesheet">  
-  <link rel="stylesheet" href="{{ $root }}/static-assets/styles/index.css">
-  <title>{{ globalMeta.siteName }}</title>
-  <InlinedCSS/>
+  <title>Blog by Saurabh Daware</title>
 </head>
 <body>
-  <header>
-    <DarkModeToggle props={$root} />
-    <h1>{{ globalMeta.siteName }}</h1>
-    <div class="header-bio">
-      Hi, I am {{ globalMeta.name }}</b> you can follow me on <a href="https://twitter.com/{{ globalMeta.twitter }}">Twitter @{{ globalMeta.twitter }}</a>. 
-      <!-- <br/>I write articles about Developer Experience, Performance, and the tools that I build. -->
-      <br /> [WIP] This blog isn't ready yet.
-    </div>
-  </header>
+  <Header props={ $root } />
+  <Hero props={ globalMeta } />
   <main>
-    <div class="article-container">
-      {{
-        contentArray
-          .filter((meta) => meta.published !== false)
-          .map(meta => /* html */ `
-            <article class="shadow">
-              <a href="${meta.$path}/">
-                <h2>${meta.title}</h2>
-                <div class="article-date"><small>Published on ${meta.$createdAt.toDateString()}</small></div>
-                <p class="article-description">${meta.description}</p>
-              </a>
-            </article>
-          `)
-      }}
-    </div>
+    <ArticlesPreview props={ contentArray } />
   </main>
   <Footer/>
-  <script defer src="{{ $root }}/static-assets/js/static-main.js"></script>
 </body>
 </html>

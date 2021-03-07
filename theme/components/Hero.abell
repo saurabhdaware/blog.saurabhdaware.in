@@ -1,0 +1,57 @@
+<AbellComponent>
+<template>
+  {{ const { globalMeta } = props; }}
+  <div class="hero-container">
+    <!-- <img class="shadow profile-image" src="https://res.cloudinary.com/saurabhdaware/image/upload/c_scale,q_100,w_180/v1598547845/saurabh2019/mememe2.jpg" /> -->
+    <h1>{{ globalMeta.name }}</h1>
+    <div class="hero-bio">
+      Hi, I write about DX, Performance, and everything related to Web and JavaScript. 
+      <br/>For projects, you can check out my portfolio at <a href="https://saurabhdaware.in/">saurabhdaware.in</a>
+    </div>
+  </div>
+</template>
+<style>
+  .hero-container {
+    width: 100%;
+    padding: 0px 250px 60px;
+    text-align: center;
+  }
+
+  .profile-image {
+    border-radius: 100%;
+  }
+
+  h1 {
+    margin: 20px 0px 0px;
+    font-size: 4rem;
+  }
+
+  .hero-bio {
+    padding: 20px 0px;
+    font-size: 1.2rem;
+    line-height: 30px;
+  }
+
+
+  @media (max-width: 768px) {
+		.hero-container {
+			padding: 30px 20px 100px 20px;
+		}
+
+    .profile-image {
+      width: 120px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+    }
+
+    .hero-bio {
+      font-size: 1rem;
+    }
+  }
+</style>
+<script>
+  
+</script>
+</AbellComponent>

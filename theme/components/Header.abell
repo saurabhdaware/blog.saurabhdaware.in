@@ -1,0 +1,39 @@
+<AbellComponent>
+<template>
+  {{
+    const { $root } = props;
+
+    const DarkModeToggle = require('../components/DarkModeToggle.abell');
+  }}
+  <header>
+    <a class="brand-link" href="{{ $root }}">
+      <img width="45" class="profile-image" src="{{ $root }}/static-assets/icons/logo-192.png" />
+    </a>
+    <DarkModeToggle props={$root}/>
+  </header>
+</template>
+<style>
+  header {
+    padding: 50px 250px;
+  }
+
+  header .brand-link {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--font-color-primary);
+  }
+
+  @media (max-width: 768px) {
+    header {
+      padding: 30px 18px 10px;
+    }
+
+    header .brand-link {
+      font-size: 1.3rem;
+    }
+  }
+</style>
+<script>
+  
+</script>
+</AbellComponent>
