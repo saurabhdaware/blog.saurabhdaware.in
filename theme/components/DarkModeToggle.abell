@@ -1,6 +1,6 @@
 <AbellComponent>
 <template>
-  <button aria-label="Activate Dark Mode" aria-pressed="false" onclick="toggleTheme(this)" class="dark-mode-toggle {{ props.class || '' }}">
+  <button aria-label="Activate Dark Mode" aria-pressed="false" onclick="toggleTheme(this)" class="dark-mode-toggle">
     <span class="sun"> <img alt="sun icon that represents light mode" width="35px" src="{{ props.$root }}/static-assets/icons/sun.svg" /></span>
     <span class="moon"><img alt="moon icon to represent dark mode " width="25px" src="{{ props.$root }}/static-assets/icons/moon.svg" /></span>
   </button>
@@ -13,7 +13,9 @@
   /* DARK MODE SWITCH */
   .dark-mode-toggle {
     cursor: pointer;
-    float: right;
+    position: absolute;
+    right: 250px;
+    top: 40px;
     border: none;
     background: transparent;
   }
@@ -31,18 +33,13 @@
   body .dark-mode-toggle .moon {display: none}
   body .dark-mode-toggle .sun {display: inline-block}
 
-  .blog-dark-mode {
-    position: relative;
-    right: -40px;
-  }
-
   @media (max-width: 768px) {
-    .blog-dark-mode {
-      position: unset;
+    .dark-mode-toggle {
+      right: 6px;
     }
   }
 </style>
-<script>
+<script inlined>
   function toggleTheme(toggleButton) {
     if (document.body.classList.contains('dark')) {
       document.body.classList.remove('dark');
@@ -59,12 +56,8 @@
         toggleButton.setAttribute('aria-label', 'Activate Light Mode');
       }
     }
-
-    const themeChangeEvent = new Event('theme-change');
-    window.dispatchEvent(themeChangeEvent);
   }
-</script>
-<script inlined>
+
   const localPreference = window.localStorage.getItem('prefers-theme');
 
   if (localPreference) {
