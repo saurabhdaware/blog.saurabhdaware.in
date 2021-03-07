@@ -85,7 +85,7 @@
         }}
         <ArticlesPreview props={ 
           contentArray: newContentArray, 
-          noPadding: true 
+          isBlogPage: true 
         } />
       </div>
     </div>
