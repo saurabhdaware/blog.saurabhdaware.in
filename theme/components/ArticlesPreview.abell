@@ -58,9 +58,18 @@
 		.article-container {
 			padding: 20px 20px 20px 20px;
 		}
+		
 		.article-container > article > a {
 			padding: 15px 20px;
 			display: block;
+		}
+
+		.article-container > article h3 {
+			font-size: 1.5rem;
+		}
+
+		.article-container .article-description {
+			font-size: 1rem;
 		}
 	}
 

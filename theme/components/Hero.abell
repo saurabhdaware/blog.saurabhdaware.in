@@ -2,12 +2,11 @@
 <template>
   {{ const { globalMeta } = props; }}
   <div class="hero-container">
-    <img class="shadow profile-image" src="https://res.cloudinary.com/saurabhdaware/image/upload/c_scale,q_100,w_180/v1598547845/saurabh2019/mememe2.jpg" />
+    <!-- <img class="shadow profile-image" src="https://res.cloudinary.com/saurabhdaware/image/upload/c_scale,q_100,w_180/v1598547845/saurabh2019/mememe2.jpg" /> -->
     <h1>{{ globalMeta.name }}</h1>
     <div class="hero-bio">
-      Abell Minima is a starter blog built with Abell. <br/>This template is designed 
-      and maintained by 
-      <a href="https://twitter.com/{{ globalMeta.twitter }}">Twitter @{{ globalMeta.twitter }}</a>.
+      Hi, I write about DX, Performance, and everything related to Web and JavaScript. 
+      <br/>For projects, you can check out my portfolio at <a href="https://saurabhdaware.in/">saurabhdaware.in</a>
     </div>
   </div>
 </template>
@@ -48,7 +47,7 @@
     }
 
     .hero-bio {
-      font-size: 1.05rem;
+      font-size: 1rem;
     }
   }
 </style>
