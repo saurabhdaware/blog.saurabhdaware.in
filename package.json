@@ -11,7 +11,9 @@
   "keywords": [],
   "author": "",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "faunadb": "^4.1.1"
+  },
   "devDependencies": {
     "abell": "^0.9.0"
   }

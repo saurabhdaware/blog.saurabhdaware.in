@@ -3,3 +3,4 @@ dist/
 .debug
 content/interview-experience-at-razorpay
 themeold/
+.env
