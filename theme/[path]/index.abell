@@ -49,14 +49,30 @@
       } />
     </div>
     <div class="after-blog-content">
-      <hr/><br/>
        <TwitterShareButton 
         props={link: `${globalMeta.domain}/${meta.$path}/`, $root}
       />
+      <br/><br/><br/><hr/><br/>
+      <script
+        src="https://utteranc.es/client.js"
+        repo="saurabhdaware/blog.saurabhdaware.in"
+        issue-term="url"
+        label="comments"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+      </script>
       <div class="more-articles">
-        <h2>More from the Author</h2>
+        {{
+          const newContentArray = contentArray.filter(content => content.$path !== meta.$path && content.published !== false);
+        }}
+        {{ 
+          newContentArray.length > 0 
+          ? /* html */ `<h2>More from the Author</h2>` 
+          : null
+        }}
         <ArticlesPreview props={ 
-          contentArray: contentArray.filter(content => content.$path !== meta.$path), 
+          contentArray: newContentArray, 
           noPadding: true 
         } />
       </div>
