@@ -71,16 +71,8 @@
   }
 
   @media (max-width: 768px) {
-    body.blog-page header {
-      padding: 50px 12px 10px;
-    }
-
     body.blog-page .after-blog-content {
       padding: 20px 12px;
-    }
-
-    body.blog-page header .brand-link {
-      font-size: 1.3rem;
     }
   }
 </style>

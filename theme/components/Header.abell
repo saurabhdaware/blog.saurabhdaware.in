@@ -7,7 +7,7 @@
   }}
   <header>
     <a class="brand-link" href="{{ $root }}">
-      <img width="45" class="profile-image" src="{{ $root }}/static-assets/icons/logo-192.png" />
+      <img class="profile-image" src="{{ $root }}/static-assets/icons/logo-192.png" />
     </a>
     <DarkModeToggle props={$root}/>
   </header>
@@ -17,20 +17,30 @@
     padding: 50px 250px;
   }
 
-  header .brand-link {
+  .brand-link {
     font-size: 1.5rem;
     font-weight: 500;
     color: var(--font-color-primary);
   }
 
+  .brand-link > img {
+    width: 45px;
+  }
+
   @media (max-width: 768px) {
     header {
-      padding: 30px 18px 10px;
+      padding: 45px 18px 10px;
     }
 
-    header .brand-link {
+    .brand-link {
       font-size: 1.3rem;
+      display: inline-block;
     }
+
+    .brand-link > img {
+      width: 40px;
+    }
+
   }
 </style>
 <script>

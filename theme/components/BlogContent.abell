@@ -24,6 +24,12 @@
     line-height: 2rem;
   }
 
+  ul > li,
+  ol > li {
+    font-size: 1.25rem;
+    line-height: 2.2rem;
+  }
+
   h1 {
     font-size: 3.3rem;
     font-weight: bold;
@@ -97,6 +103,12 @@
     }
 
     p {
+      font-size: 1.15rem;
+      line-height: 1.8rem;
+    }
+
+    ul > li,
+    ol > li {
       font-size: 1.15rem;
       line-height: 1.8rem;
     }
