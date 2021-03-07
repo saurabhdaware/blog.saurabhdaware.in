@@ -3,6 +3,7 @@
   <div class="article-container {{ props.noPadding === true ? 'no-padding' : '' }}">
     {{
 			props.contentArray
+				.filter(meta => meta.published !== false)
 				.map(meta => /* html */ `
 				<article class="shadow">
 						<a href="${meta.$root}/${meta.$path}/">

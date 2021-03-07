@@ -2,7 +2,8 @@
   const { globalMeta, contentArray, $root } = Abell;
   
   const CommonAssets = require('./components/CommonAssets.abell');
-  const DarkModeToggle = require('./components/DarkModeToggle.abell');
+  const Header = require('./components/Header.abell');
+  const Hero = require('./components/Hero.abell');
   const ArticlesPreview = require('./components/ArticlesPreview.abell');
   const Footer = require('./components/Footer.abell');
 }}
@@ -11,6 +12,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125454191-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-125454191-1');
+  </script>
+
+
   <meta charset="UTF-8">
 
   <meta name="twitter:card" content="summary_large_image" />
@@ -18,23 +30,16 @@
   <meta property="og:title" content="{{ globalMeta.siteName }}" />
   <meta property="og:description" content="{{ globalMeta.siteName }}" />
   <meta property="og:image" content="https://res.cloudinary.com/saurabhdaware/image/upload/g_center,w_1100,c_fit,co_rgb:222222,l_text:Work Sans_80_600:{{ globalMeta.siteName }}/v1604047618/saurabh2021/cover.png" />
+  <link rel="shortcut icon" href="{{ $root }}/static-assets/icons/logo-192.png" type="image/x-icon" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Welcome to the {{ globalMeta.siteName }}, A blog by {{ globalMeta.name }}" />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <title>{{ globalMeta.siteName }}</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&amp;display=swap" rel="stylesheet">  
+  <title>Blog by Saurabh Daware</title>
 </head>
 <body>
-  <DarkModeToggle props={ $root } />
-  <div class="header">
-    <h1>{{ globalMeta.siteName }}</h1>
-    <div class="header-bio">
-      Abell Minima is a starter blog built with Abell. <br/>This template is designed 
-      and maintained by 
-      <a href="https://twitter.com/{{ globalMeta.twitter }}">Twitter @{{ globalMeta.twitter }}</a>.
-    </div>
-  </div>
-
+  <Header props={ $root } />
+  <Hero props={ globalMeta } />
   <main>
     <ArticlesPreview props={ contentArray } />
   </main>

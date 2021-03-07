@@ -3,7 +3,7 @@ module.exports = {
   destinationPath: 'dist',
   contentPath: 'content',
   globalMeta: {
-    siteName: "Saurabh Daware",
+    name: "Saurabh Daware",
     twitter: 'saurabhcodes',
     domain: 'https://blog.saurabhdaware.in'
   }

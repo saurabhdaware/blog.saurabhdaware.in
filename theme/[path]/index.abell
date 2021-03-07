@@ -2,7 +2,7 @@
   const { globalMeta, meta, importContent, contentArray, $root } = Abell;
 
   const CommonAssets = require('../components/CommonAssets.abell');
-  const DarkModeToggle = require('../components/DarkModeToggle.abell');
+  const Header = require('../components/Header.abell');
   const BlogContent = require('../components/BlogContent.abell');
   const TwitterShareButton = require('../components/TwitterShareButton.abell');
   const ArticlesPreview = require('../components/ArticlesPreview.abell');
@@ -41,10 +41,7 @@
 </head>
 <body class="blog-page">
   <main>
-    <header>
-      <a class="brand-link" href="{{ $root }}">{{ globalMeta.siteName }}</a>
-      <DarkModeToggle props={$root}/>
-    </header>
+    <Header props={ $root } />
     <div class="blog-container">
       <BlogContent props={
         importContent,

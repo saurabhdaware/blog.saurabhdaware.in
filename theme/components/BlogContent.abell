@@ -47,6 +47,19 @@
     margin-bottom: 50px;
   }
 
+  img {
+    max-width: 700px;
+  }
+
+  p > img,
+  p > iframe {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 16px 0px;
+    border-radius: 4px;
+  }
+
   code:not(.hljs) {
     background-color: var(--code-background);
   }
@@ -90,6 +103,11 @@
 
     .content {
       padding: 20px 12px;
+    }
+
+    img,
+    iframe {
+      max-width: 100%;
     }
   }
 </style>
