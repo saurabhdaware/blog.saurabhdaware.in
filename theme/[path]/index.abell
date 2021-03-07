@@ -57,7 +57,8 @@
     <div class="blog-container">
       <BlogContent props={
         importContent,
-        meta
+        meta,
+        domain: globalMeta.domain
       } />
     </div>
     <div class="after-blog-content">

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "abell build",
-    "dev": "abell serve"
+    "dev": "NODE_ENV=dev abell serve"
   },
   "keywords": [],
   "author": "",
