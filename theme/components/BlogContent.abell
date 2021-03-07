@@ -124,10 +124,8 @@
   }
 </style>
 <script>
-  try {
+  if (document.body.classList.contains('blog-page')) {
     hljs.initHighlightingOnLoad();
-  } catch (err) {
-    console.log(err);
   }
 </script>
 </AbellComponent>

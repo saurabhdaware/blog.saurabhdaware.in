@@ -15,7 +15,7 @@
     cursor: pointer;
     position: absolute;
     right: 250px;
-    top: 40px;
+    top: 43px;
     border: none;
     background: transparent;
   }

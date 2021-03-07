@@ -93,16 +93,19 @@
     utterances.postMessage(message, 'https://utteranc.es');
   }
 
-  window.addEventListener('message', () => 
-    setCommentsTheme(document.body.classList.contains('dark') ? 'dark' : 'light')
-  );
+  if (document.body.classList.contains('blog-page')) {
+    window.addEventListener('message', () => 
+      setCommentsTheme(document.body.classList.contains('dark') ? 'dark' : 'light')
+    );
 
-  window.addEventListener('theme-change', () => {
-    console.log('theme change!!');
-    console.log(document.body.classList.contains('dark'));
+    window.addEventListener('theme-change', () => {
+      console.log('theme change!!');
+      console.log(document.body.classList.contains('dark'));
 
-    setCommentsTheme(document.body.classList.contains('dark') ? 'dark' : 'light')
-  })
+      setCommentsTheme(document.body.classList.contains('dark') ? 'dark' : 'light')
+    })
+  }
 
+  console.log('Hey there!\n\n No need to struggle so much to see the code. This blog is open-source at https://github.com/saurabhdaware/blog.saurabhdaware.in')
 </script>
 </AbellComponent>

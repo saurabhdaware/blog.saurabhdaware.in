@@ -21,10 +21,11 @@
     font-size: 1.5rem;
     font-weight: 500;
     color: var(--font-color-primary);
+    display: inline-block;
   }
 
   .brand-link > img {
-    width: 45px;
+    width: 40px;
   }
 
   @media (max-width: 768px) {
@@ -34,7 +35,6 @@
 
     .brand-link {
       font-size: 1.3rem;
-      display: inline-block;
     }
 
     .brand-link > img {
