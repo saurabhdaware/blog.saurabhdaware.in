@@ -31,6 +31,16 @@
     color: var(--font-color-primary);
   }
 
+  button {
+    background-color: transparent;
+    font-family: var(--font-family-primary);
+    border: none;
+  }
+
+  body:not(.user-is-tabbing) button {
+    outline: none;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-family-primary);
     color: var(--font-color-primary);

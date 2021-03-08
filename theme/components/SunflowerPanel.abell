@@ -1,0 +1,78 @@
+<AbellComponent>
+<template>
+  <aside class="sidepanel">
+    <button class="sidepanel-button sunflowers">
+      <span class="emoji sunflower-emoji">🌻</span>
+      <span class="count sunflower-count">0</span>
+    </button>
+    <a href="#comments" class="sidepanel-button comments">
+      <span class="emoji comments-emoji"><img width="18" src="../static-assets/icons/comments.svg" /></span>
+      <span class="count comments-count">0</span>
+    </a>
+    <a href="#share" class="sidepanel-button share">
+      <span class="emoji share-emoji"><img width="18" src="../static-assets/icons/share.svg" /></span>
+      <span class="count share-count">0</span>
+    </a>
+  </aside>
+</template>
+<style>
+  aside {
+    position: fixed;
+    left: 80px;
+    height: 500px;
+    top: 30%;
+  }
+
+  
+
+  .sidepanel-button {
+    font-size: 1.2rem;
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 12px 70px;
+    display: block;
+    opacity: .6;
+    transition: opacity .3s ease;
+  }
+
+  .sidepanel-button:hover {
+    opacity: 1;
+  }
+
+  .emoji {
+    font-size: 1.6rem;
+    display: block;
+    padding: 0px 0px;
+  }
+
+  .sunflower-emoji {
+    padding: 6px 0px;
+  }
+
+  .comments-emoji,
+  .share-emoji {
+    opacity: .7;
+  }
+
+  body.dark .comments-emoji,
+  body.dark .share-emoji {
+    filter: invert(100%);
+  }
+
+  .count {
+    font-size: 1.1rem;
+    opacity: .9;
+    color: var(--font-color-primary);
+  }
+</style>
+<script>
+  scopedSelector('.sunflowers').addEventListener('click', () => {
+    const sunflowerCount = document.querySelector('aside .sunflowers > .sunflower-count');
+    if (Number(sunflowerCount.innerText) < 50) {
+      sunflowerCount.innerText = Number(sunflowerCount.innerText) + 1;
+    }
+  })
+</script>
+</AbellComponent>

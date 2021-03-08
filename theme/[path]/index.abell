@@ -3,6 +3,7 @@
 
   const CommonAssets = require('../components/CommonAssets.abell');
   const Header = require('../components/Header.abell');
+  const SunflowerPanel = require('../components/SunflowerPanel.abell');
   const BlogContent = require('../components/BlogContent.abell');
   const TwitterShareButton = require('../components/TwitterShareButton.abell');
   const ArticlesPreview = require('../components/ArticlesPreview.abell');
@@ -54,6 +55,11 @@
 <body class="blog-page">
   <main>
     <Header props={ $root } />
+    {{
+      Abell.programInfo.task === 'serve'
+      ? <SunflowerPanel />
+      : null
+    }}
     <div class="blog-container">
       <BlogContent props={
         importContent,
