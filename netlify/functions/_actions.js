@@ -30,19 +30,20 @@ function addSunflowers(blogUrl, sunflowerCount = 1) {
   )
 }
 
+async function read(index, value) {
+	let result;
+	try{
+		result = await client.query(q.Get(q.Match(q.Index(index), value)));
+	} catch(err) {
+		result = { data: { sunflowerCount: null } };
+	}
 
-async function readAll(index) {
-	return client.query(
-		q.Map(
-      q.Paginate(q.Match(q.Index(index))),
-      q.Lambda(x => q.Get(x))
-    )
-	);
+	return result;
 }
 
 
 module.exports = {
   create,
-  readAll,
+  read,
   addSunflowers
 }

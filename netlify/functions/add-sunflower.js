@@ -1,10 +1,5 @@
 const actions = require('./_actions.js');
 
-async function readAllSunflowers () {
-  const allSunflowersData = (await actions.readAll('all_sunflowers')).data.map(val => val.data);
-  return allSunflowersData;
-}
-
 exports.handler = async function(event, context) {
   const isDev = event.multiValueHeaders.host[0] === 'localhost:8888';
   let headers = {}
