@@ -120,6 +120,42 @@
     background-color: var(--background-hover)
   }
 
+  @media (max-width: 768px) {
+    aside {
+      top: unset;
+      left: 0px;
+      bottom: 0px;
+      width: 100%;
+      height: unset;
+      display: flex;
+      background-color: var(--elevation-background);
+      transform: unset;
+      border-top: 2px solid var(--code-background);
+    }
+
+    .emoji {
+      display: unset;
+    }
+
+    .sunflower-emoji {
+      padding: 0px 16px;
+    }
+
+    .sidepanel-button {
+      padding: 10px;
+      flex: 1;
+    }
+
+    .sidepanel-button:first-child {
+      border-right: 2px solid var(--code-background);
+      transition: border 0s ease;
+    }
+
+    button.share,
+    .share-popup {
+      display: none;
+    }
+  }
 </style>
 <script>
  {{ 
