@@ -1,4 +1,5 @@
 <AbellComponent>
+{{ const process = require('process') }}
 <template>
   <aside class="sidepanel">
     <button class="sidepanel-button sunflowers">
@@ -7,23 +8,47 @@
     </button>
     <a href="#comments" class="sidepanel-button comments">
       <span class="emoji comments-emoji"><img width="18" src="../static-assets/icons/comments.svg" /></span>
-      <span class="count comments-count">0</span>
     </a>
-    <a href="#share" class="sidepanel-button share">
+    <button class="sidepanel-button share">
       <span class="emoji share-emoji"><img width="18" src="../static-assets/icons/share.svg" /></span>
-      <span class="count share-count">0</span>
-    </a>
+    </button>
+    <div class="share-popup shadow">
+      <a class="twitter-share" href="https://twitter.com/intent/tweet?text=">Share on Twitter</a>
+      <button class="copy-button">Copy Link</button>
+    </div> 
   </aside>
+  <div class="overlay"></div>
 </template>
 <style>
   aside {
     position: fixed;
-    left: 80px;
-    height: 500px;
-    top: 30%;
+    left: 60px;
+    top: 50%;
+    z-index: 1;
+    transform: translateY(-50%);
   }
 
-  
+  .overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    display: none;
+  }
+
+  .overlay.show {
+    display: block;
+  }
+
+  button.sunflowers {
+    filter: grayscale(100%);
+  }
+
+  button.sunflowers:hover {
+    filter: grayscale(0%);
+  }
 
   .sidepanel-button {
     font-size: 1.2rem;
@@ -34,7 +59,7 @@
     padding: 12px 70px;
     display: block;
     opacity: .6;
-    transition: opacity .3s ease;
+    transition: all .3s ease;
   }
 
   .sidepanel-button:hover {
@@ -66,13 +91,157 @@
     opacity: .9;
     color: var(--font-color-primary);
   }
+
+  .share-popup {
+    display: none;
+    width: 200px;
+    position: absolute;
+    border-radius: 4px;
+    background-color: var(--elevation-background);
+  }
+
+  .share-popup.show {
+    display: inline-block;
+  }
+
+  .share-popup > a,
+  .share-popup > button {
+    display: block;
+    padding: 12px 24px;
+    font-size: .95rem;
+    cursor: pointer;
+    color: var(--font-color-primary);
+    width: 100%;
+    text-align: left;
+  }
+
+  .share-popup > a:hover,
+  .share-popup > button:hover {
+    background-color: var(--background-hover)
+  }
+
 </style>
 <script>
-  scopedSelector('.sunflowers').addEventListener('click', () => {
-    const sunflowerCount = document.querySelector('aside .sunflowers > .sunflower-count');
-    if (Number(sunflowerCount.innerText) < 50) {
-      sunflowerCount.innerText = Number(sunflowerCount.innerText) + 1;
+ {{ 
+    const isDev = process.env.NODE_ENV === 'dev';
+    const host = isDev ? 'http://localhost:8888' : props.domain;
+  }}
+
+  let timerId;
+  let sentSunflowers = 0;
+
+  const sharePopupEl = scopedSelector('.share-popup');
+  const overlayEl = scopedSelector('.overlay');
+  const copyButton = scopedSelector('.copy-button');
+  const sunflowerCount = scopedSelector('.sunflowers > .sunflower-count');
+
+  const BLOG_KEY = location.pathname.replace(/\//g, '')
+  const STORAGE_KEY = 'sunclick-' + BLOG_KEY;
+  const LOCAL_SUNFLOWER_COUNT = Number(localStorage.getItem(STORAGE_KEY))
+  
+  let initialSunflowerCount = Number(sunflowerCount.innerText);
+  sentSunflowers = initialSunflowerCount;
+
+
+  // Throttle function to reduce API requests
+  const throttle = function (func, delay) {
+    if (timerId) {
+      return
     }
+
+    timerId = setTimeout(function () {
+      func()
+      timerId = undefined;
+    }, delay)
+  }
+
+
+  // Example POST method implementation:
+  async function postSunflowerData(sunflowerCount) {
+    const ENDPOINT = '{{ host }}/.netlify/functions/add-sunflower';
+    const data = {
+      blog: BLOG_KEY,
+      sunflowerCount
+    }
+
+    const response = await fetch(ENDPOINT, {
+      method: 'POST',
+      mode: 'cors',
+      cache: 'no-cache',
+      credentials: 'same-origin',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      redirect: 'follow',
+      referrerPolicy: 'no-referrer',
+      body: JSON.stringify(data)
+    });
+    return response.json();
+  }
+
+  // main functions
+  function sunflowerClickHandler() {
+    const totalSunflowersSentByUser = Number(sunflowerCount.innerText) + LOCAL_SUNFLOWER_COUNT - initialSunflowerCount;
+    if (totalSunflowersSentByUser >= 50) {
+      alert("That's a lot of positivity. Keep some sunflowers for yourself :)");
+      return;
+    }
+    
+    sunflowerCount.innerText = Number(sunflowerCount.innerText) + 1;
+
+    throttle(() => {
+      localStorage.setItem(STORAGE_KEY , Number(sunflowerCount.innerText) + LOCAL_SUNFLOWER_COUNT - initialSunflowerCount);
+      postSunflowerData(Number(sunflowerCount.innerText) - sentSunflowers)
+        .catch(err => {
+          console.log("Couldn't add sunflowers");
+          console.log(err);
+        })
+      sentSunflowers = Number(sunflowerCount.innerText);
+    }, 3000);
+  }
+
+  function toggleSharePopup() {
+    if (sharePopupEl.classList.contains('show')) {
+      overlayEl.classList.remove('show')
+    } else {
+      overlayEl.classList.add('show')
+    }
+    sharePopupEl.classList.toggle('show');
+
+    copyButton.innerHTML = 'Copy Link'
+  }
+
+  function copyButtonHandler() {
+    const tempInput = document.createElement('input');
+    tempInput.id = 'delete-this-input';
+    document.body.appendChild(tempInput);
+    tempInput.value = location.href;
+    tempInput.select();
+    tempInput.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+    tempInput.outerHTML = '';
+    copyButton.innerHTML += ' <small>(URL Copied)</small>';
+  }
+
+
+  async function fetchAndSetInitialSunflowers() {
+    const dbRes = await fetch('{{ host }}/.netlify/functions/get-sunflower?blog=' + BLOG_KEY).then(res => res.json());
+    sunflowerCount.innerText = dbRes.sunflowerCount;
+    initialSunflowerCount = dbRes.sunflowerCount;
+    sentSunflowers = dbRes.sunflowerCount;
+  }
+
+
+  scopedSelector('.sunflowers').addEventListener('click', sunflowerClickHandler);
+  scopedSelector('button.share').addEventListener('click', toggleSharePopup);
+  overlayEl.addEventListener('click', () => {
+    sharePopupEl.classList.remove('show')
+    overlayEl.classList.remove('show');
   })
+
+  scopedSelector('.share-popup .twitter-share').href += location.href;
+  copyButton.addEventListener('click', copyButtonHandler);
+
+  fetchAndSetInitialSunflowers();
 </script>
 </AbellComponent>

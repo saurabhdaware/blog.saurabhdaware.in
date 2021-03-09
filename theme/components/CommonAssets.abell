@@ -3,6 +3,7 @@
 <style global inlined>
   body {
     --background-primary: #fff;
+    --background-hover: #f8f8f8;
     --font-color-primary: #333;
     --elevation-background: #fff;
     --code-background: #f3f3f3;
@@ -12,6 +13,7 @@
 
   body.dark {
     --background-primary: #121212;
+    --background-hover: #191919;
     --font-color-primary: #ccc; 
     --elevation-background: #1D1D1D;
     --code-background: #222;

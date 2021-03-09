@@ -55,11 +55,7 @@
 <body class="blog-page">
   <main>
     <Header props={ $root } />
-    {{
-      Abell.programInfo.task === 'serve'
-      ? <SunflowerPanel />
-      : null
-    }}
+    <SunflowerPanel />
     <div class="blog-container">
       <BlogContent props={
         importContent,
@@ -72,15 +68,17 @@
         props={link: `${globalMeta.domain}/${meta.$path}/`, $root}
       />
       <br/><br/><br/><hr/><br/>
-      <script
-        src="https://utteranc.es/client.js"
-        repo="saurabhdaware/blog.saurabhdaware.in"
-        issue-term="url"
-        label="comments"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-      </script>
+      <div id="comments">
+        <script
+          src="https://utteranc.es/client.js"
+          repo="saurabhdaware/blog.saurabhdaware.in"
+          issue-term="url"
+          label="comments"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+        </script>
+      </div>
       <div class="more-articles">
         {{
           const newContentArray = contentArray.filter(content => content.$path !== meta.$path && content.published !== false);

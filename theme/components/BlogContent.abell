@@ -152,10 +152,6 @@
   if (document.body.classList.contains('blog-page')) {
 
     hljs.initHighlightingOnLoad();
-
-    postData('{{ host }}/.netlify/functions/ping', {
-      hello: 'yoowwww boi'
-    }).then(console.log)
   }
 </script>
 </AbellComponent>
