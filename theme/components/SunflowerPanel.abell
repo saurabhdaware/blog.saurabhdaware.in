@@ -262,6 +262,9 @@
 
   async function fetchAndSetInitialSunflowers() {
     const dbRes = await fetch('{{ host }}/.netlify/functions/get-sunflower?blog=' + BLOG_KEY).then(res => res.json());
+    if (!dbRes.sunflowerCount) {
+      dbRes.sunflowerCount = 0;
+    }
     sunflowerCount.innerText = dbRes.sunflowerCount;
     initialSunflowerCount = dbRes.sunflowerCount;
     sentSunflowers = dbRes.sunflowerCount;
