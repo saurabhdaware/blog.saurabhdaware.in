@@ -1,45 +1,49 @@
-# Abell Starter Template
+# blog.saurabhdaware
 
+Personal blog of [@saurabhdaware](https://github.com/saurabhdaware) Built using [Abell](https://abelljs.org)
 
-![Screenshot of Abell Minima Template's Cover. The cover shows dark and light mode of Minima with a picture of mobile view](https://res.cloudinary.com/saurabhdaware/image/upload/v1588342001/abell/og.png)
+This blog is WIP so the code is not the best quality neither the site is optimized. More information will be added to README once the work is done.
 
-**DEMO: https://abell-starter-minima.netlify.app**
+## Use this as a Template
 
-<p align="left"><a href="https://npmjs.org/package/abell"><img alt="GitHub package.json version" src="https://img.shields.io/github/package-json/v/abelljs/abell/main?style=for-the-badge&labelColor=black&logo=npm&label=abell&color=darkred"></a>&nbsp; <a href="https://join.slack.com/t/abellland/shared_invite/zt-ebklbe8h-FhRgHxNbuO_hvFDf~nZtGQ"><img src="https://img.shields.io/badge/slack-join%20channel-4A154B?style=for-the-badge&logo=slack&logoColor=pink&labelColor=black"/></a> &nbsp; <a href="https://twitter.com/abellland"><img alt="Twitter profile badge of @abellland" src="https://img.shields.io/badge/follow-@AbellLand-1DA1F2?style=for-the-badge&logo=twitter&logoColor=1DA1F2&labelColor=black"/></a> </p>
-
-A starter template for creating your blog with [abelljs/abell](https://github.com/abelljs/abell).
-
-***ABELL IS NOT READY SO DO NOT USE IT IN SERIOUS APPLICATIONS***
-
-
-## Using this template to create your blog.
-
-### Create locally with create-abell-app
-```
-npx create-abell-app my-blog --template abelljs/abell-starter-minima
+```sh
+npx create-abell-app my-cool-blog --template saurabhdaware/blog.saurabhdaware.in
 ```
 
-or
+You will have to follow the [Setup For Backend](#for-backend) for sunflower button to work.
 
-Create Repository to your account, and Deploy to Netlify in one click 🎉
+## Setup Repository
 
-[![Deploy to Netlify Button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/abelljs/abell-starter-minima)
+In most of the cases, frontend setup should be enough to get things going.
 
-This will create a repository in your GitHub and will deploy it to the Netlify.
+Backend is needed for the sunflower button to work.
 
-## Write/Edit blogs
+### For Frontend
 
-- Take a local copy of your blog
-  `git clone <blog-github-url>`
-- `cd` to the new cloned folder
-- `npm run dev` to run a dev server
+```sh
+git clone <repository-url>
+cd blog.saurabhdaware.in/
+npm install
+npm run dev
+```
 
-The new repository will have a `content` folder in the root directory. You can edit blogs from there and you can create a new folder with `index.md` to create a new blog.
+### For Backend
 
-To see the final output, you can build the site with `npm run build`
+1. Setup FaunaDB Secret Key
+  i. Create Secret Key from your FaunaDB Security Tab.
+  ii. Create `.env` file in project root with following content
+```
+FAUNADB_SECRET_KEY=<Your Fauna Secret Key>
+```
 
----
+2. Install Netlify CLI
+```sh
+npm i -g netlify-cli
+```
 
-For documentation on editing layout, check out README of [abelljs/abell](https://github.com/abelljs/abell) repository
+3. Run Serverless Function
+```sh
+netlify dev
+```
 
-Thank you and do let us know what you think [Twitter @AbellLand](https://twitter.com/abellland)
+Thanks!
