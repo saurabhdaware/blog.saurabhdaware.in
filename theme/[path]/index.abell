@@ -8,6 +8,8 @@
   const TwitterShareButton = require('../components/TwitterShareButton.abell');
   const ArticlesPreview = require('../components/ArticlesPreview.abell');
   const Footer = require('../components/Footer.abell');
+
+  const TWITTER_SHARE_URL = `"${ meta.title }" by @${ globalMeta.twitter } ${globalMeta.domain}/${meta.$path}/`;
 }}
 
 <CommonAssets />
@@ -55,7 +57,7 @@
 <body class="blog-page">
   <main>
     <Header props={ $root } />
-    <SunflowerPanel />
+    <SunflowerPanel props={ TWITTER_SHARE_URL } />
     <div class="blog-container">
       <BlogContent props={
         importContent,
@@ -65,7 +67,10 @@
     </div>
     <div class="after-blog-content">
        <TwitterShareButton 
-        props={link: `${globalMeta.domain}/${meta.$path}/`, $root}
+        props={
+          TWITTER_SHARE_URL,
+          $root
+        }
       />
       <br/><br/><br/><hr/><br/>
       <div id="comments">

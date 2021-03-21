@@ -4,7 +4,7 @@
     target="_blank" 
     rel="noopener noreferer" 
     class="twitter-share-button blog dynamic-url shadow" 
-    href="https://twitter.com/intent/tweet?text={{ props.link }}" 
+    href='https://twitter.com/intent/tweet?text={{ props.TWITTER_SHARE_URL }}'    
     data-size="large"
   >
     <img width="20" style="position: relative;top:4px;" alt="Twitter Logo" src="{{ props.$root }}/static-assets/icons/twitter.svg"> 
