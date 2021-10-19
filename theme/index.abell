@@ -44,5 +44,28 @@
     <ArticlesPreview props={ contentArray } />
   </main>
   <Footer/>
+  <script>
+    function prefetch(url) {
+      return new Promise((res, rej, link) => {
+        link = document.createElement(`link`);
+        link.rel = `prefetch`;
+        link.href = url;
+
+        link.onload = res;
+        link.onerror = rej;
+
+        document.head.appendChild(link);
+      });
+    }
+
+    {{
+      const prefetchScript = contentArray.filter((article) => article.published !== false)
+        .slice(0, 2)
+        .map(article => `prefetch('/${article.$path}/').catch(console.log)`)
+        .join(';');
+    }}
+
+    {{ prefetchScript }}
+  </script>
 </body>
 </html>

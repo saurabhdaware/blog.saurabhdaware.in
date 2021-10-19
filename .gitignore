@@ -3,3 +3,4 @@ dist/
 .debug
 themeold/
 .env
+delete/
