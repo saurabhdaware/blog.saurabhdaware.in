@@ -4,7 +4,7 @@ module.exports = {
   contentPath: 'content',
   globalMeta: {
     name: "Saurabh Daware",
-    twitter: 'saurabhcodes',
+    twitter: 'saurabhdawaree',
     domain: 'https://blog.saurabhdaware.in'
   }
 }
