@@ -2,12 +2,12 @@ Hiiii! so if you came from Twitter, you must have reached here after navigating 
 
 Before we begin, I want you all to answer one simple poll without reloading the page. Don't worry it's not about getting the right answer.
 
-**The routing between blog's homepage to this page, was it a client-side or browser's default navigation?**
+**The navigation between blog's homepage to this page, was it a client-side navigation or browser's default navigation?**
 
 <details>
-<summary>Explain client-side routing and browser navigation</summary>
+<summary>Explain client-side navigation and browser navigation</summary>
 
-**Client-side routing** is when the navigation happens on JavaScript on the client-side. This does not require any page-reload and is instant.
+**Client-side navigation** is when the navigation happens on JavaScript on the client-side. This does not require any page-reload and is instant.
 
 **Browser's default navigation** is the default behaviour when we click a link. It requests a new document and waits for the page to load and then navigates to the page.
 
@@ -72,12 +72,13 @@ Before we begin, I want you all to answer one simple poll without reloading the 
   }
 </script>
 <div id="poll-1">
-  <button onclick="select(this)">Client-Side Routing</button>
+  <button onclick="select(this)">Client-Side Navigation</button>
   <button onclick="select(this)">Default Browser Navigation</button>
   <button onclick="select(this)">Skip This Poll</button>
 </div>
-
-Select any option in the poll to continue reading this article...
+<br/>
+<i>Select any option in the poll to continue reading this article...</i>
+<br/><br/><br/>
 
 <style>
   .hidden-article {
@@ -89,10 +90,10 @@ Select any option in the poll to continue reading this article...
 </style>
 <div class="hidden-article">
 
-So the correct answer is **Default Browser Navigation** 🎉 
+The correct answer is **Default Browser Navigation** 🎉 
 
-Though I'll be more happy if you have selected Client-Side Routing because in this blog, I am going to talk about how we can improve the browser navigation performance without client-side routing.
+Though I'll be more happy if you selected Client-Side Navigation because in this blog, I am going to talk about how we can improve the browser navigation performance without client-side routing.
 
-
+We currently have 2 popular ways to navigate between pages, client-side routing and browser's default navigation. Client-Side routing is a default routing method in most JavaScript frameworks. 
 
 </div>
