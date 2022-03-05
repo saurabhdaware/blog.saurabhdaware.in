@@ -1,0 +1,10 @@
+{{
+  import { NAME } from '../build-ts/constants.ts';
+}}
+<div class="hero-container">
+  <h1>{{ NAME }}</h1>
+  <div class="hero-bio">
+    Hi, I write about DX, Performance, and everything related to Web and JavaScript. 
+    <br/>For projects, you can check out my portfolio at <a href="https://saurabhdaware.in/">saurabhdaware.in</a>
+  </div>
+</div>
