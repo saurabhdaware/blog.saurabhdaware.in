@@ -1,5 +1,6 @@
 import { Route } from 'abell';
 import index from './index.abell';
+import blog from './blog.abell';
 const markdownContent = import.meta.globEager('./content/**/index.md');
 
 const pathToSlug = (mdPath: string): string => 
@@ -18,10 +19,31 @@ const blogInfo: BlogInfo = Object.keys(markdownContent)
 
 
 export const makeRoutes = (): Route[] => {
-  return [
+  const routes = [
     {
       path: '/',
       render: () => index({blogInfo}),
-    }
+    },
+    ...Object.entries(markdownContent).map(
+      ([blogPath, blogImport]): Route => {
+        const slug = pathToSlug(blogPath)
+        return {
+          path: `/${slug}`,
+          render: () => {
+            if (blogImport.attributes.published !== false) {
+              return blog({
+                blogInfo,
+                slug,
+                attributes: blogImport.attributes,
+                content: blogImport.default,
+              })
+            }
+  
+            return undefined;
+          }
+        }
+      }
+    )
   ]
+  return routes;
 }

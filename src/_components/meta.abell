@@ -1,16 +1,21 @@
 {{
   import { DESCRIPTION, TITLE, TWITTER } from '../build-ts/constants';
+  import { getOgImage } from '../build-ts/utils.ts';
 }}
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125454191-1"></script>
 <meta charset="UTF-8">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:creator" content="@{{ TWITTER }}" />
-<meta property="og:title" content="{{ TITLE}}" />
-<meta property="og:description" content="{{ DESCRIPTION }}" />
-<meta property="og:image" content="https://res.cloudinary.com/saurabhdaware/image/upload/g_center,w_1100,c_fit,co_rgb:222222,l_text:Work Sans_80_600:{{ TITLE }}/v1604047618/saurabh2021/cover.png" />
+<meta property="og:title" content="{{ props.title || TITLE }}" />
+<meta property="og:description" content="{{ props.description || DESCRIPTION }}" />
+<meta property="og:image" content="{{ props.ogImage || getOgImage({title: props.title || TITLE}) }}" />
+<meta property="og:image:secure_url" content="{{ props.ogImage || getOgImage({title: props.title || TITLE}) }}" />
+<meta property="og:image:width" content="600" />
+<meta property="og:image:height" content="300" />
+<meta property="og:image:alt" content="{{ props.title || TITLE }}" />
 <link rel="shortcut icon" href="/logo-192.png" type="image/x-icon" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Welcome to the {{ TITLE }}" />
-<title>{{ props.title || TITLE }}</title>
+<meta name="description" content="{{ props.description || `Welcome to the ${ TITLE }` }}" />
+<title>{{ props.title ? props.title + ' - ' : null }}{{ TITLE }}</title>

@@ -1,1 +1,1 @@
-import '@fontsource/dm-sans';
+import './home.css';

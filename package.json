@@ -21,7 +21,9 @@
   "homepage": "https://github.com/saurabhdaware/blog.saurabhdaware.in#readme",
   "dependencies": {
     "@fontsource/dm-sans": "^4.5.2",
-    "abell": "^1.0.0-alpha.41",
+    "@fontsource/inter": "^4.5.4",
+    "abell": "^1.0.0-alpha.45",
+    "highlightjs-calvera-dark": "^0.0.2",
     "vite-plugin-md-to-html": "^0.0.7"
   }
 }

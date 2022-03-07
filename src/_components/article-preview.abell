@@ -1,5 +1,5 @@
 <article class="shadow">
-  <a href="/{{ props.blog.slug }}/">
+  <a class="no-link" href="/{{ props.blog.slug }}">
   <h3>{{ props.blog.attributes?.title ?? props.blog.slug }}</h3>
   <div class="article-date">Published on {{ new Date(props.blog.attributes.createdAt).toDateString() }}</div>
   <p class="article-description">{{ props.blog.attributes?.description }}</p>

@@ -1,5 +1,5 @@
 <header>  
-  <a class="brand-link" href="/">
+  <a class="no-link brand-link" href="/">
     <img class="profile-image" src="/logo-192.png" />
   </a>
   <button aria-label="Activate Dark Mode" aria-pressed="false" onclick="toggleTheme(this)" class="dark-mode-toggle">

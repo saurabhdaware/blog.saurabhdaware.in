@@ -21,10 +21,11 @@
   <section class="article-container">
     {{
 			props.blogInfo
-				.filter(blog => blog.attributes.published !== false)
+				.filter(blog => !!blog.attributes.published)
 				.map(blog => articlePreview({blog}))
     }}
   </section>
+  <script src="./src/client/global.entry.ts" type="module"></script>
   <script src="./src/client/index.entry.ts" type="module"></script>
   <script>
   {{ globalInlinedJS }}
