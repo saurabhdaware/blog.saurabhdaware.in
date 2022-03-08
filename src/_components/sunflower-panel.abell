@@ -1,0 +1,17 @@
+<aside class="sidepanel">
+  <button class="sidepanel-button sunflowers">
+    <span class="emoji sunflower-emoji">🌻</span>
+    <span class="count sunflower-count">0</span>
+  </button>
+  <a href="#comments" class="sidepanel-button no-link comments">
+    <span class="emoji comments-emoji"><img width="18" src="/icons/comments.svg" /></span>
+  </a>
+  <button class="sidepanel-button share">
+    <span class="emoji share-emoji"><img width="18" src="/icons/share.svg" /></span>
+  </button>
+  <div class="share-popup shadow">
+    <a class="twitter-share" href='https://twitter.com/intent/tweet?text={{ props.TWITTER_SHARE_URL }}'>Share on Twitter</a>
+    <button class="copy-button">Copy Link</button>
+  </div> 
+</aside>
+<div class="overlay"></div>
