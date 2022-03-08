@@ -2,7 +2,7 @@
 title: Things That Went Wrong With Abell v0
 description: "This blog talks about the mess ups I did while building Abell v0"
 createdAt: "7 Mar 2022"
-published: false
+published: true
 ---
 ## Background
 
