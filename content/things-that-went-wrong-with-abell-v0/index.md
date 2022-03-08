@@ -1,7 +1,7 @@
 ---
 title: Things That Went Wrong With Abell v0
 description: "This blog talks about the mess ups I did while building Abell v0"
-createdAt: "7 Mar 2022"
+createdAt: "9 Mar 2022"
 published: true
 ---
 ## Background
@@ -161,4 +161,6 @@ This is an attempt to go back to the initial philosophy of having a syntax that 
 
 I am really not sure how the information in this post is going to help but I hope it does? 
 
-A hugeeee shoutout to Vite team!! Do check out [Vite](https://vitejs.dev/) and if you're using it in your projects, try sponsoring someone from their team if possible.
+A hugeeee shoutout to Vite team!! Do check out [Vite](https://vitejs.dev/) and if you're using it in your projects, maybe sponsor someone from their team?
+
+Bieeeeeeee 🌻

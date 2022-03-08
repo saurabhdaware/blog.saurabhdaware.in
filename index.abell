@@ -24,6 +24,11 @@
     {{
 			props.blogInfo
 				.filter(blog => !!blog.attributes.published)
+        .sort((a, b) => 
+          (new Date(a.attributes.createdAt).getTime()) < (new Date(b.attributes.createdAt).getTime())
+          ? 1
+          : -1
+        )
 				.map(blog => articlePreview({blog}))
     }}
   </section>
