@@ -3,7 +3,7 @@ import 'highlightjs-calvera-dark/theme.css';
 import './blog.css';
 let sentSunflowers = 0;
 
-const HOST = process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : '';
+const HOST = '';
 
 const sharePopupEl = document.querySelector('.share-popup');
 const overlayEl = document.querySelector('.overlay');
