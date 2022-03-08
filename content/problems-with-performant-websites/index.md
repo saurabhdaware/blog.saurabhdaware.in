@@ -48,7 +48,7 @@ This adds up lot of code and messes up the code structure. Oh and have I mention
 Inlining styles is a whole different task with bundlers, here's talk by [Surma](https://twitter.com/dassurma) and [Jake](https://twitter.com/jaffathecake) mentioning the issue-
 
 <p style="text-align: left">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/TsTt7Tja30Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/TsTt7Tja30Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
 <br/>
 
