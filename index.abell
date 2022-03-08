@@ -3,6 +3,8 @@
   import header from './src/_components/header.abell';
   import hero from './src/_components/hero.abell';
   import articlePreview from './src/_components/article-preview.abell';
+  import footer from './src/_components/footer.abell';
+
   import globalInlinedJS from './src/client/global.inlined.js?raw';
   import globalInlinedCSS from './src/client/global.inlined.css';
   import homeCSS from './src/client/home.css';
@@ -25,6 +27,7 @@
 				.map(blog => articlePreview({blog}))
     }}
   </section>
+  {{ footer }}
   <script src="./src/client/global.entry.ts" type="module"></script>
   <script src="./src/client/index.entry.ts" type="module"></script>
   <script>

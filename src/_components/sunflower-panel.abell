@@ -10,7 +10,7 @@
     <span class="emoji share-emoji"><img width="18" src="/icons/share.svg" /></span>
   </button>
   <div class="share-popup shadow">
-    <a class="twitter-share" href='https://twitter.com/intent/tweet?text={{ props.TWITTER_SHARE_URL }}'>Share on Twitter</a>
+    <a class="twitter-share no-link" href='https://twitter.com/intent/tweet?text={{ props.TWITTER_SHARE_URL }}'>Share on Twitter</a>
     <button class="copy-button">Copy Link</button>
   </div> 
 </aside>

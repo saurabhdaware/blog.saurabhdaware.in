@@ -4,8 +4,11 @@
   import sunflowerPanel from './src/_components/sunflower-panel.abell';
   import blogContent from './src/_components/blog-content.abell';
   import articlePreview from './src/_components/article-preview.abell';
+  import footer from './src/_components/footer.abell';
+
   import globalInlinedJS from './src/client/global.inlined.js?raw';
   import { TWITTER, DOMAIN } from './src/build-ts/constants.ts';
+  const getTwitterShareURL = (props) => encodeURI(`Check out "${props.attributes.title}" by @${TWITTER} at ${DOMAIN}/${props.slug}`)
 }}
 <html lang="en">
 <head>
@@ -15,11 +18,22 @@
   {{ header }}
   {{ 
     sunflowerPanel({
-      TWITTER_SHARE_URL: encodeURI(`Check out "${props.attributes.title}" by @${TWITTER} at ${DOMAIN}/${props.slug}`)
+      TWITTER_SHARE_URL: getTwitterShareURL(props)
     })
   }}
   {{ blogContent(props) }}
   <div class="after-blog-content">
+    <a 
+      target="_blank" 
+      rel="noopener noreferer" 
+      class="twitter-share-button dynamic-url shadow no-link" 
+      href='https://twitter.com/intent/tweet?text={{ getTwitterShareURL(props) }}'    
+      data-size="large"
+    >
+      <img width="20" style="position: relative;top:4px;" alt="Twitter Logo" src="/icons/twitter.svg"> 
+      &nbsp;Share on Twitter
+    </a>
+    <br /><br /><br />
     <hr />
     <section id="comments">
       <script
@@ -50,6 +64,7 @@
       }}
     </section>
   </div>
+  {{ footer }}
   <script src="./src/client/global.entry.ts" type="module"></script>
   <script src="./src/client/blog.entry.ts" type="module"></script>
   <script>

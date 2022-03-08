@@ -2,7 +2,7 @@
 aside {
   position: fixed;
   left: 60px;
-  top: 50%;
+  top: 45%;
   z-index: 1;
   transform: translateY(-50%);
 }
@@ -43,6 +43,9 @@ button.sunflowers:hover {
 
 .sidepanel-button:hover {
   opacity: 1;
+}
+.sidepanel-button.share {
+  padding-top: 18px;
 }
 
 .emoji {
@@ -302,4 +305,11 @@ body.dark .hljs {
   .after-blog-content {
     padding: 0px 12px;
   }
+}
+
+.twitter-share-button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: var(--elevation-background);
+  color: var(--link-color);
 }
