@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "abell dev",
     "generate": "abell generate",
+    "build": "npm run generate",
     "preview": "npm run generate && netlify dev --port 5000",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
