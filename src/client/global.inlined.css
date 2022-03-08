@@ -65,6 +65,16 @@ a:not(.no-link):hover {
   transition: all 0.2s ease;
 }
 
+hr {
+  border-color: var(--code-background);
+  opacity: .3;
+}
+
+body.dark hr {
+  border-color: #333;
+  opacity: 1;
+}
+
 .shadow {
   box-shadow: 0 5px 20px -4px #0005;
 }

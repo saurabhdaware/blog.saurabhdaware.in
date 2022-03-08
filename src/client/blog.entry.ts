@@ -3,7 +3,7 @@ import 'highlightjs-calvera-dark/theme.css';
 import './blog.css';
 let sentSunflowers = 0;
 
-const HOST = 'http://localhost:5000'
+const HOST = process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : '';
 
 const sharePopupEl = document.querySelector('.share-popup');
 const overlayEl = document.querySelector('.overlay');
@@ -96,6 +96,24 @@ async function fetchAndSetInitialSunflowers() {
   sentSunflowers = dbRes.sunflowerCount;
 }
 
+function setCommentsTheme(themeName: 'dark' | 'light') {
+  const message = {
+    type: 'set-theme',
+    theme: themeName === 'dark' ? 'github-dark' : 'github-light'
+  };
+  const utterances = document.querySelector<HTMLIFrameElement>('iframe.utterances-frame').contentWindow; // try event.source instead
+  utterances.postMessage(message, 'https://utteranc.es');
+}
+
+const makeHeadingLinks = () => {
+  const headings = document.querySelectorAll<HTMLHeadingElement>('.content h2, .content h3, .content h4, .content h5, .content h6');
+  headings.forEach((heading) => {
+    heading.id = heading.innerText.toLowerCase().replace(/ /g, '-').replace(/[?]/g, '');
+    heading.innerHTML += ` <a class="heading-link" href="#${heading.id}">#</a>`
+  })
+}
+
+
 
 document.querySelector('.sunflowers').addEventListener('click', sunflowerClickHandler);
 document.querySelector('button.share').addEventListener('click', toggleSharePopup);
@@ -104,6 +122,13 @@ overlayEl.addEventListener('click', () => {
   overlayEl.classList.remove('show');
 })
 
-copyButton.addEventListener('click', copyButtonHandler);
+window.addEventListener('theme-change', () => {
+  setCommentsTheme(document.body.classList.contains('dark') ? 'dark' : 'light')
+})
 
+window.addEventListener('message', () => 
+  setCommentsTheme(document.body.classList.contains('dark') ? 'dark' : 'light')
+);
+copyButton.addEventListener('click', copyButtonHandler);
 fetchAndSetInitialSunflowers();
+makeHeadingLinks();

@@ -19,14 +19,37 @@
     })
   }}
   {{ blogContent(props) }}
-  <section class="article-container">
-    {{
-			props.blogInfo
-				.filter(blog => blog.attributes.published !== false)
-        .slice(0, 2)
-				.map(blog => articlePreview({blog}))
-    }}
-  </section>
+  <div class="after-blog-content">
+    <hr />
+    <section id="comments">
+      <script
+        src="https://utteranc.es/client.js"
+        repo="saurabhdaware/blog.saurabhdaware.in"
+        issue-term="url"
+        label="comments"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+      </script>
+    </section>
+    <section class="article-container">
+      {{
+        () => {
+          const previewBlogs = props.blogInfo
+            .filter(blog => blog.attributes.published !== false && blog.slug !== props.slug)
+            .slice(0, 2)
+
+          if (previewBlogs.length > 0) {
+            const heading = /* html */ `<h2>More from the Author</h2>`;
+            const previews = previewBlogs.map(blog => articlePreview({blog})).join('');
+            return heading + previews;
+          }
+
+          return '';
+        }
+      }}
+    </section>
+  </div>
   <script src="./src/client/global.entry.ts" type="module"></script>
   <script src="./src/client/blog.entry.ts" type="module"></script>
   <script>
