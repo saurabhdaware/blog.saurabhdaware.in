@@ -1,0 +1,34 @@
+{{
+  import metaTags from './src/_components/meta.abell';
+  import header from './src/_components/header.abell';
+  import hero from './src/_components/hero.abell';
+  import articlePreview from './src/_components/article-preview.abell';
+  import globalInlinedJS from './src/client/global.inlined.js?raw';
+  import globalInlinedCSS from './src/client/global.inlined.css';
+  import homeCSS from './src/client/home.css';
+}}
+<html lang="en">
+<head>
+{{ metaTags }}
+<style>
+{{ globalInlinedCSS }}
+{{ homeCSS }}
+</style>
+</head>
+<body>
+  {{ header }}
+  {{ hero }}
+  <section class="article-container">
+    {{
+			props.blogInfo
+				.filter(blog => !!blog.attributes.published)
+				.map(blog => articlePreview({blog}))
+    }}
+  </section>
+  <script src="./src/client/global.entry.ts" type="module"></script>
+  <script src="./src/client/index.entry.ts" type="module"></script>
+  <script>
+  {{ globalInlinedJS }}
+  </script>
+</body>
+</html>
