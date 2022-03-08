@@ -228,6 +228,12 @@ body.dark .hljs {
   border-bottom: 2px solid var(--link-color);
 }
 
+.content img {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .content h2 .heading-link,
 .content h3 .heading-link,
 .content h4 .heading-link,
