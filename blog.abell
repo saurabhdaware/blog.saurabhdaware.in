@@ -1,0 +1,59 @@
+{{
+  import metaTags from './src/_components/meta.abell';
+  import header from './src/_components/header.abell';
+  import sunflowerPanel from './src/_components/sunflower-panel.abell';
+  import blogContent from './src/_components/blog-content.abell';
+  import articlePreview from './src/_components/article-preview.abell';
+  import globalInlinedJS from './src/client/global.inlined.js?raw';
+  import { TWITTER, DOMAIN } from './src/build-ts/constants.ts';
+}}
+<html lang="en">
+<head>
+{{ metaTags(props.attributes) }}
+</head>
+<body class="blog">
+  {{ header }}
+  {{ 
+    sunflowerPanel({
+      TWITTER_SHARE_URL: encodeURI(`Check out "${props.attributes.title}" by @${TWITTER} at ${DOMAIN}/${props.slug}`)
+    })
+  }}
+  {{ blogContent(props) }}
+  <div class="after-blog-content">
+    <hr />
+    <section id="comments">
+      <script
+        src="https://utteranc.es/client.js"
+        repo="saurabhdaware/blog.saurabhdaware.in"
+        issue-term="url"
+        label="comments"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+      </script>
+    </section>
+    <section class="article-container">
+      {{
+        () => {
+          const previewBlogs = props.blogInfo
+            .filter(blog => blog.attributes.published !== false && blog.slug !== props.slug)
+            .slice(0, 2)
+
+          if (previewBlogs.length > 0) {
+            const heading = /* html */ `<h2>More from the Author</h2>`;
+            const previews = previewBlogs.map(blog => articlePreview({blog})).join('');
+            return heading + previews;
+          }
+
+          return '';
+        }
+      }}
+    </section>
+  </div>
+  <script src="./src/client/global.entry.ts" type="module"></script>
+  <script src="./src/client/blog.entry.ts" type="module"></script>
+  <script>
+  {{ globalInlinedJS }}
+  </script>
+</body>
+</html>

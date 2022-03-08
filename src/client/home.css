@@ -1,0 +1,46 @@
+/* Hero */
+.hero-container {
+  width: 100%;
+  padding: 40px 250px 60px;
+  text-align: center;
+}
+
+.profile-image {
+  border-radius: 100%;
+}
+
+h1 {
+  margin: 20px 0px 0px;
+  font-size: 4rem;
+}
+
+@supports (font-variation-settings: normal) {
+  h1 {
+    font-variation-settings: 'wght' bold;
+  }
+}
+
+.hero-bio {
+  padding: 20px 0px;
+  font-size: 1.2rem;
+  line-height: 30px;
+}
+
+
+@media (max-width: 768px) {
+  .hero-container {
+    padding: 30px 20px 100px 20px;
+  }
+
+  .profile-image {
+    width: 120px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-bio {
+    font-size: 1rem;
+  }
+}

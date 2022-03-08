@@ -1,25 +1,31 @@
+---
+title: Things That Went Wrong With Abell v0
+description: "This blog talks about the mess ups I did while building Abell v0"
+createdAt: "7 Mar 2022"
+published: true
+---
 ## Background
 
 When I started Abell, the idea was to create a static-site-generator where you don't have to go through the documentation or learn new things. Something that you can figure out from your intuition.
 
 For example, you don't have to know anything about the Abell to figure out what the following syntax is doing-
 ```abell
-\{{
+{{
   const a = 3;
   const b = 2;
 }}
 
-<body>\{{ a + b }}</body>
+<body>{{ a + b }}</body>
 ```
 
 This is of course an easy example. Lets see something complicated-
 ```abell
-\{{
+{{
   const fs = require('fs');
   const renderMarkdown = require('markdown-to-html-lib');
 }}
 
-<body>\{{ renderMarkdown(fs.readFileSync('./content.md', 'utf-8')) }}</body>
+<body>{{ renderMarkdown(fs.readFileSync('./content.md', 'utf-8')) }}</body>
 ```
 
 This is again something that we can understand without knowing anything about abell.
@@ -36,7 +42,7 @@ With every new feature, came a new syntax-
 E.g. Components in Abell v0 -
 ```abell
 // Importing component
-\{{
+{{
   const Navbar = require('./components/Navbar.abell');
 }}
 <body>
@@ -88,7 +94,7 @@ But now we have Vite!! Andd not to sound dramatic but Vite is probably the best 
 
 ## Vite-based SSG
 
-By using Vite as base, I can just half of the abell codebase. The dev-server, live-reload, integration with frameworks, bundling, minification, transpiling, everything is handled by vite.
+By using Vite as base, I could just delete half of the abell codebase. The dev-server, live-reload, integration with frameworks, bundling, minification, transpiling, everything is handled by vite.
 
 If you've been following the abell v0's progress, you might know that abell v0 repo is currently split into 2 npm packages, `abell` and `abell-renderer` where `abell-renderer` is a template engine and `abell` is an SSG. 
 
@@ -99,10 +105,10 @@ One more change that was made in the internal implementation was that now instea
 ### In v0
 ```abell
 // input
-\{{
+{{
   const path = require('path');
 }}
-<body>\{{ path.join('hi', 'hello') }}</body>
+<body>{{ path.join('hi', 'hello') }}</body>
 
 // output
 <body>hi/hello</body>
@@ -111,15 +117,15 @@ One more change that was made in the internal implementation was that now instea
 ### In v1
 ```abell
 // input
-\{{
+{{
   import path from 'path';
 }}
-<body>\{{ path.join('hi', 'hello') }}</body>
+<body>{{ path.join('hi', 'hello') }}</body>
 ```
 
 ```js
 // output
-import { e } from 'abell/dist/internal-utils';
+import { evaluateAbellBlock as e } from 'abell/dist/internal-utils';
 import path from 'path';
 
 export const html = (props) => `<body>${e(path.join('hi', 'hello'))}</body>`
@@ -135,18 +141,18 @@ Since the target is to make the Abell integratable, we'll be dropping Abell Comp
 Currently, in Abell v1, you can write basic components like this-
 ```abell
 // importing of the component
-\{{
+{{
   import navbar from './navbar.abell';
 }}
 <body>
-  \{{ navbar }} // without props
-  \{{ navbar({hello: 'hi'}) }} // with props
+  {{ navbar }} // without props
+  {{ navbar({hello: 'hi'}) }} // with props
 </body>
 ```
 
 ```abell
 // component code
-<nav>\{{ 'hello'.toUpperCase() }}</nav>
+<nav>{{ 'hello'.toUpperCase() }}</nav>
 ```
 
 This is an attempt to go back to the initial philosophy of having a syntax that does not need documentation (though it will have one, don't worry 🙈)

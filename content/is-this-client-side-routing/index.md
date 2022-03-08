@@ -1,3 +1,10 @@
+---
+title: "Is this a Client-Side Routing?"
+description: "A blog that explains routing techniques used in web. Don't want to giveaway spoilers so you will have to read the blog."
+createdAt: "19 Oct 2021"
+published: false
+---
+
 Hiiii! so if you came from Twitter, you must have reached here after navigating from the homepage. 
 
 Before we begin, I want you all to answer one simple poll without reloading the page. Don't worry it's not about getting the right answer.
