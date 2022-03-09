@@ -1,10 +1,3 @@
-// GA Script
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-
-gtag('config', 'UA-125454191-1');
-
 // Dark Mode. This has to be inlined in head so that there isn't flash of wrong themed site
 function toggleTheme(toggleButton) {
   if (document.body.classList.contains('dark')) {

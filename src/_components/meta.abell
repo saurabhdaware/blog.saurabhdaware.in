@@ -3,7 +3,6 @@
   import { getOgImage } from '../build-ts/utils.ts';
 }}
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-125454191-1"></script>
 <meta charset="UTF-8">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:creator" content="@{{ TWITTER }}" />
