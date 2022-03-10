@@ -17,17 +17,14 @@ const createKeyIfNotFound = async (key: string) => {
     const newKey = await fetch(`${API_HOST}/create?namespace=${location.hostname}&key=${key}&value=0&update_lowerbound=0&update_upperbound=50`)
       .then((res) => res.json())
 
-    console.log('Created new key ', {newKey}, {key});
-
     return newKey;
   }
 }
 
 export async function countPageVisit() {
   const key = await getKey('pageview');
-  console.log({key});
   const data = await fetch(`${API_HOST}/hit/${location.hostname}/${key}`).then((res) => res.json());
-  console.log({pageVisit: data.value});
+  console.log(`Heloooo!! I am wondering why you opened this console 🤔, anyway here's some bonus information for you. You are the visitor number ${data.value}`);
 }
 
 export async function storeSunflowers(sunflowerCount) {
