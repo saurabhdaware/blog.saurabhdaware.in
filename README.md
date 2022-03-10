@@ -18,3 +18,8 @@ Things I realised that are missing in Abell as of now which I'll have to fix in 
 ```vue
 <body>{{ () => null }}</body>
 ```
+
+- This prints `[object][Object]`
+```vue
+<body>{{ {hello: 'hi'} }}</body>
+```
