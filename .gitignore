@@ -4,3 +4,4 @@ dist/
 themeold/
 .env
 delete/
+.DS_STORE
