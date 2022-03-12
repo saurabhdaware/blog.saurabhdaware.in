@@ -5,6 +5,9 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <meta charset="UTF-8">
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="author" content="Saurabh Daware">
+<meta name="keywords" content="Saurabh,Blog,JavaScript,Daware">
+<meta name="generator" content="Abell 1.0">
 <meta name="twitter:creator" content="@{{ TWITTER }}" />
 <meta property="og:title" content="{{ props.title || TITLE }}" />
 <meta property="og:description" content="{{ props.description || DESCRIPTION }}" />
