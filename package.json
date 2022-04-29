@@ -24,9 +24,11 @@
   "dependencies": {
     "@fontsource/dm-sans": "^4.5.2",
     "@fontsource/inter": "^4.5.4",
-    "abell": "^1.0.0-alpha.45",
     "faunadb": "^4.5.2",
-    "highlightjs-calvera-dark": "^0.0.2",
     "vite-plugin-md-to-html": "^0.0.7"
+  },
+  "devDependencies": {
+    "abell": "^1.0.0-alpha.52",
+    "highlightjs-calvera-dark": "^0.0.5"
   }
 }
