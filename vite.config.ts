@@ -1,5 +1,5 @@
 import { defineConfig } from 'abell';
-import { vitePluginMdToHTML } from 'vite-plugin-md-to-html';
+import vitePluginMdToHTML from 'vite-plugin-md-to-html';
 const abellHighlighter = (e) => {
   return {
     name: "abell",
