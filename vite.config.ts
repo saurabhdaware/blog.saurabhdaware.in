@@ -33,14 +33,16 @@ const abellHighlighter = (e) => {
 }
 
 export default defineConfig({
-  plugins: [vitePluginMdToHTML({
-    syntaxHighlighting: true,
-    highlightJs: {
-      register: {
-        'abell': abellHighlighter
+  plugins: [
+    vitePluginMdToHTML({
+      syntaxHighlighting: true,
+      highlightJs: {
+        register: {
+          'abell': abellHighlighter
+        }
       }
-    }
-  })],
+    })
+  ],
   build: {
     manifest: true,
   }

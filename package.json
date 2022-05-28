@@ -23,11 +23,10 @@
   "homepage": "https://github.com/saurabhdaware/blog.saurabhdaware.in#readme",
   "dependencies": {
     "@fontsource/dm-sans": "^4.5.2",
-    "@fontsource/inter": "^4.5.4",
-    "faunadb": "^4.5.2"
+    "@fontsource/inter": "^4.5.4"
   },
   "devDependencies": {
-    "abell": "^1.0.0-alpha.52",
+    "abell": "^1.0.0-alpha.56",
     "highlightjs-calvera-dark": "^0.0.5",
     "vite-plugin-md-to-html": "^0.0.9"
   }
