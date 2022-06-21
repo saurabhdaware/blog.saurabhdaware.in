@@ -1,7 +1,7 @@
 import { Route } from 'abell';
 import index from './index.abell';
 import blog from './blog.abell';
-const markdownContent = import.meta.globEager('./content/**/index.md');
+const markdownContent = import.meta.glob('./content/**/index.md', { eager: true });
 
 const pathToSlug = (mdPath: string): string => 
   mdPath.replace('./content/', '').replace('/index.md', '');
