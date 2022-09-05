@@ -40,6 +40,9 @@ export const makeRoutes = (): Route[] => {
             }
   
             return undefined;
+          },
+          routeOptions: {
+            outputPathPattern: '[route]/index.html'
           }
         }
       }

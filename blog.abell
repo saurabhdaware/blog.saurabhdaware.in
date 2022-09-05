@@ -65,8 +65,8 @@
     </section>
   </div>
   {{ footer }}
-  <script src="./src/client/global.entry.ts" type="module"></script>
-  <script src="./src/client/blog.entry.ts" type="module"></script>
+  <script src="../src/client/global.entry.ts" type="module"></script>
+  <script src="../src/client/blog.entry.ts" type="module"></script>
   <script>
   {{ globalInlinedJS }}
   </script>
