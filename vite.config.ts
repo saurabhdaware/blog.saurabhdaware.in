@@ -45,5 +45,6 @@ export default defineConfig({
   ],
   build: {
     manifest: true,
-  }
+  },
+  // publicDir: 'content'
 })
