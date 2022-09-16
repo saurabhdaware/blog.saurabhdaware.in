@@ -63,7 +63,7 @@ Inlining styles is a whole different task with bundlers, here's talk by [Surma](
 And thus we eventually hit a condition where we only have one option, either add that extra bit of performance or have a better structured code and ignore the performance improvements.
 
 <br/>
-<img alt="Stressful button click meme with Scalable website and Performant website as option" width="300" src="/blog-assets/problems-with-performant-websites/assets/button-meme.jpg" />
+<img alt="Stressful button click meme with Scalable website and Performant website as option" width="300" src="./assets/button-meme.jpg" />
 
 
 ## Solution to this?
@@ -129,10 +129,10 @@ I recently moved my portfolio [saurabhdaware.in](https://saurabhdaware.in) from 
 
 ### Before
 
-![95 Performance Score in web.dev with Cumulative Layout Shift as 0.992](/blog-assets/problems-with-performant-websites/assets/performance-before.png)
+![95 Performance Score in web.dev with Cumulative Layout Shift as 0.992](./assets/performance-before.png)
 
 ### After
 
-![100 Performance Score in web.dev with Cumulative Layout Shift as 0.009](/blog-assets/problems-with-performant-websites/assets/performance-after.png)
+![100 Performance Score in web.dev with Cumulative Layout Shift as 0.009](./assets/performance-after.png)
 
 Notice how the site loads the text instead of a blank blue page. This was possible since there was no compromise in the code structure so I could go all in to improving that extra bit of performance.
