@@ -28,6 +28,6 @@
   "devDependencies": {
     "abell": "^1.0.0-alpha.67",
     "highlightjs-calvera-dark": "^0.0.5",
-    "vite-plugin-md-to-html": "^0.0.12"
+    "vite-plugin-md-to-html": "^0.0.14"
   }
 }
