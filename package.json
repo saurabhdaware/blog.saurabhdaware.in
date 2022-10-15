@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "abell dev",
     "generate": "abell generate",
@@ -26,8 +27,8 @@
     "@fontsource/inter": "^4.5.4"
   },
   "devDependencies": {
-    "abell": "^1.0.0-alpha.67",
+    "abell": "^1.0.0-alpha.71",
     "highlightjs-calvera-dark": "^0.0.5",
-    "vite-plugin-md-to-html": "^0.0.9"
+    "vite-plugin-md-to-html": "^0.0.18"
   }
 }
