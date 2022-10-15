@@ -36,6 +36,7 @@ export default defineConfig({
   plugins: [
     vitePluginMdToHTML({
       syntaxHighlighting: true,
+      resolveImageLinks: true,
       highlightJs: {
         register: {
           'abell': abellHighlighter
@@ -43,8 +44,5 @@ export default defineConfig({
       }
     })
   ],
-  build: {
-    manifest: true,
-  },
   // publicDir: 'content'
 })
